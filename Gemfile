@@ -13,6 +13,7 @@ gem 'builder'
 gem 'json'
 gem 'dotenv'
 gem 'net-http'
+gem 'redis-sinatra'
 
 group :development, :test do
   gem 'pry-byebug'

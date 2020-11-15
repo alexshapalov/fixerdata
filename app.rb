@@ -17,8 +17,8 @@ require 'sinatra/base'
 require 'sinatra'
 require "sinatra/namespace"
 require "sinatra/json"
-#!require'mongoid'
-
+require 'sinatra'
+require 'redis-sinatra'
 require 'app/routes'
 
 module FixerData
