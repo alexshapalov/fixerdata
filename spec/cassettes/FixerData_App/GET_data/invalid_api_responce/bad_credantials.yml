@@ -1,0 +1,58 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: http://data.fixer.io/api/2020-10-10?access_key=ab8cfd02257340f7492fa8f2bc66aed2&base=:base&symbols=USD
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+      Host:
+      - data.fixer.io
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Sun, 15 Nov 2020 10:33:10 GMT
+      Content-Type:
+      - application/json; Charset=UTF-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Set-Cookie:
+      - __cfduid=de3544a2ab9235b9d5883391f0153eaaf1605436389; expires=Tue, 15-Dec-20
+        10:33:09 GMT; path=/; domain=.fixer.io; HttpOnly; SameSite=Lax
+      X-Apilayer-Transaction-Id:
+      - f55042ea-c3d2-4df7-9daf-523687b0475c
+      Access-Control-Allow-Methods:
+      - GET, HEAD, POST, PUT, PATCH, DELETE, OPTIONS
+      Access-Control-Allow-Origin:
+      - "*"
+      X-Request-Time:
+      - '0.014'
+      Cf-Cache-Status:
+      - DYNAMIC
+      Cf-Request-Id:
+      - 066d1050ff00002d7f7f221000000001
+      Report-To:
+      - '{"endpoints":[{"url":"https:\/\/a.nel.cloudflare.com\/report?s=ovzmEMbEbK8OpXgOdENRcxdXQwylwhA3JQh%2FT8%2F%2BWA4XEiM6tUvpkGGvqcObwwhsrg2pKnXckEbLc%2FQ%2FKigaCQ8H0imsot9WVfhuOWO1"}],"group":"cf-nel","max_age":604800}'
+      Nel:
+      - '{"report_to":"cf-nel","max_age":604800}'
+      Server:
+      - cloudflare
+      Cf-Ray:
+      - 5f284ffb3f552d7f-KBP
+    body:
+      encoding: ASCII-8BIT
+      string: '{"success":false,"error":{"code":201,"type":"invalid_base_currency"}}'
+  recorded_at: Sun, 15 Nov 2020 10:33:10 GMT
+recorded_with: VCR 6.0.0

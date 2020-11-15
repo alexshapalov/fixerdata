@@ -1,0 +1,33 @@
+# Ignore bundler config.
+/.bundle
+
+/bin
+!/bin/console
+
+tmp
+.DS_Store
+.env
+.gitkeep
+
+# Ignore the default SQLite database.
+/db/*.sqlite3
+/db/*.sqlite3-journal
+
+# Ignore all logfiles and tempfiles.
+/log/*.log
+tmp/*
+*.swp
+
+# env files
+/.env
+/.env.*
+!/.env.example
+
+dump.rdb
+vendor/bundle/*
+
+coverage/*
+.backup/*
+
+coverage/
+/coverage/*
