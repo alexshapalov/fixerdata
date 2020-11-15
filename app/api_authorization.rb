@@ -1,19 +1,28 @@
 require 'sinatra/base'
 
 module Sinatra
-  module ApiAuthorization
-    BASE = "http://data.fixer.io/api/"
-    SECRET_KEY = ENV.fetch('API_ACCESS_KEY'.freeze)
-    # SECRET_URL = 'http://data.fixer.io/'.freeze
-    key = "ab8cfd02257340f7492fa8f2bc66aed2"
-    symbols = "USD"
+  module ApiAuthorization  
+    API_URL = "http://data.fixer.io/api/".freeze 
 
-    def authorized?
-      "http://data.fixer.io/api/20-20-11?access_key=#{key}"
+    def authorized(date, base)
+      uri = URI("#{API_URL}#{date}")
+
+      params = { 
+        access_key: ENV['ACCESS_TOKEN'],
+        base: base,
+        symbols: "USD"
+      }
+
+      responce(uri, params)
+    end
+
+    def responce(uri, params)
+      uri.query = URI.encode_www_form(params)
+
+      res = Net::HTTP.get_response(uri)
+      res.body if res.is_a?(Net::HTTPSuccess)
     end
   end
-
-  # 'http://data.fixer.io/api/2020-11-10?access_key=ab8cfd02257340f7492fa8f2bc66aed2&symbols=USD&format=1'
 
   helpers ApiAuthorization
 end

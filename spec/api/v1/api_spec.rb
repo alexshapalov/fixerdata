@@ -1,4 +1,5 @@
 require 'spec_helper'
+require 'sinatra/base'
 
 RSpec.describe FixerData::App do
   describe 'GET root' do
@@ -10,7 +11,11 @@ RSpec.describe FixerData::App do
   end
 
   describe 'GET #data', :vcr do
-    it 'should return date' do
+    it 'should return date for EUR' do
+      default_options = { 
+        access_key: ENV['ACCESS_TOKEN']
+      }
+
       get '/api/v1/data/2020-10-10/EUR'
 
       expect(last_response.body).to be_eql("{\"success\":true,\"timestamp\":1602374399,\"historical\":true,\"base\":\"EUR\",\"date\":\"2020-10-10\",\"rates\":{\"USD\":1.183085}}")
