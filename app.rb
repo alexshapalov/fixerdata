@@ -9,15 +9,10 @@ $LOAD_PATH << File.expand_path('../lib', __FILE__)
 require 'dotenv'
 Dotenv.load
 
-# require 'rest-client'
-# require 'pry-byebug' if ENV['RACK_ENV'] == 'development'
-# server.rb
-
 require 'sinatra/base'
 require 'sinatra'
 require "sinatra/namespace"
 require "sinatra/json"
-require 'sinatra'
 require 'redis-sinatra'
 require 'app/routes'
 
@@ -38,8 +33,6 @@ module FixerData
 
       enable :static
     end
-    
-    # use Rack::Standards
 
     # Routes
     use Routes::Base

@@ -7,7 +7,7 @@ module FixerData
       helpers Sinatra::FixerApi
 
       namespace '/api/v1' do
-        get '/' do 
+        get '/' do
           'Welcome to FixerData API! 😻'
         end
 

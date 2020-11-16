@@ -3,7 +3,7 @@ module FixerData
     class Base < Sinatra::Application
       get '/' do
         'Welcome to FixerData! 😻'
-      end    
+      end
     end
   end
 end
