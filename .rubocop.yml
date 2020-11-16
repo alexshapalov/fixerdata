@@ -5,3 +5,7 @@ Metrics/LineLength:
 AllCops:
   Exclude:
     - 'bin/*'
+    - Gemfile
+    - Rakefile
+    - config.ru
+    - spec/spec_helper.rb

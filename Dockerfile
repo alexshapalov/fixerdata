@@ -1,27 +1,10 @@
 FROM ruby:2.7.0
 LABEL maintainer="shapalov@gmail.com"
 
-RUN apk add --no-cache \
-      dbus \
-      fontconfig \
-      gcc \
-      git \
-      libc-dev \
-      make \
-      ttf-freefont \
-      xvfb \
-    && apk add --no-cache -X http://dl-3.alpinelinux.org/alpine/edge/testing/ wkhtmltopdf
+WORKDIR /app
+COPY . /app
+RUN bundle install
 
-WORKDIR /app/
+EXPOSE 4567
 
-ADD Gemfile* /app/
-
-RUN bundle install --deployment --without development test \
-    && rm -rf ~/.bundle/cache
-
-ADD . /app/
-
-ENV RACK_ENV production
-ENV DISPLAY=:0.0
-ENV PORT 80
-CMD Xvfb :0 -screen 0 1024x768x24 -ac +extension GLX +render -noreset & bundle exec puma -C config/puma.rb
+CMD ["bundle", "exec", "rackup", "--host", "0.0.0.0", "-p", "4567"]
