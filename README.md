@@ -17,7 +17,7 @@ bundle install
 
 Start the server:
 
-`$ rackup config.ru`
+`$ rackup config.ru -p 3088`
 
 Or you can use Docker.
 
