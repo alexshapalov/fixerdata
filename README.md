@@ -87,4 +87,4 @@ The gem is available as open source under the terms of the [MIT License](http://
 
 ## Copyright
 
-Copyright © 2020 Recipe FixerData
+Copyright © 2020 FixerData
